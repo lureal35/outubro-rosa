@@ -1,5 +1,6 @@
-
-/* Configurações gerais */
+/* ============================
+   Configurações gerais
+   ============================ */
 * {
     margin: 0;
     padding: 0;
@@ -25,6 +26,9 @@ a {
     text-decoration: none;
 }
 
+/* ============================
+   Cabeçalho e navegação
+   ============================ */
 header {
     background-color: var(--branco);
     box-shadow: 0 2px 12px #00000010;
@@ -72,7 +76,9 @@ header {
     cursor: pointer;
 }
 
-/* Seção inicial */
+/* ============================
+   Seção inicial (hero)
+   ============================ */
 .hero {
     min-height: 540px;
     padding: 70px 8%;
@@ -138,7 +144,9 @@ header {
     filter: drop-shadow(0 10px 15px #d6338440);
 }
 
-/* Seções */
+/* ============================
+   Seções genéricas
+   ============================ */
 .section {
     padding: 80px 8%;
     max-width: 1400px;
@@ -163,6 +171,9 @@ header {
     margin: 10px 0;
 }
 
+/* ============================
+   Bloco "Sobre" / conteúdo em duas colunas
+   ============================ */
 .about-content {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
@@ -191,7 +202,9 @@ header {
     margin-bottom: 10px;
 }
 
-/* Cartões de sinais de alerta */
+/* ============================
+   Cartões (sinais de alerta, links, etc.)
+   ============================ */
 .symptoms {
     max-width: none;
     background: #fff8fb;
@@ -224,6 +237,20 @@ header {
     margin-bottom: 10px;
 }
 
+/* Cartões que também são links */
+.link-card {
+    text-decoration: none;
+    color: var(--texto);
+    display: block;
+}
+
+.link-card:hover {
+    text-decoration: none;
+}
+
+/* ============================
+   Aviso destacado
+   ============================ */
 .notice {
     max-width: 1000px;
     margin: 30px auto 0;
@@ -233,7 +260,9 @@ header {
     text-align: center;
 }
 
-/* Prevenção */
+/* ============================
+   Lista de prevenção
+   ============================ */
 .prevention-list {
     max-width: 850px;
     margin: auto;
@@ -263,7 +292,9 @@ header {
     margin-bottom: 5px;
 }
 
-/* Mensagem final */
+/* ============================
+   Seção de mensagem final
+   ============================ */
 .message {
     background: linear-gradient(120deg, #e84383, #b91f61);
     color: var(--branco);
@@ -295,7 +326,9 @@ header {
     margin-top: 20px;
 }
 
-/* Rodapé */
+/* ============================
+   Rodapé
+   ============================ */
 footer {
     background: #3b2630;
     color: var(--branco);
@@ -310,7 +343,70 @@ footer {
     color: #f5dce6;
 }
 
-/* Responsividade para celulares */
+/* ============================
+   Listas dentro do conteúdo
+   ============================ */
+.list {
+    margin: 10px 0 0 20px;
+}
+
+.list li {
+    margin-bottom: 8px;
+}
+
+/* ============================
+   Utilidades
+   ============================ */
+.center {
+    text-align: center;
+    margin-top: 35px;
+}
+
+/* ============================
+   FAQ (perguntas frequentes)
+   ============================ */
+.faq {
+    max-width: 900px;
+    margin: auto;
+}
+
+.faq details {
+    background: var(--branco);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 14px;
+    box-shadow: 0 5px 18px #0000000b;
+    border-left: 4px solid var(--rosa);
+}
+
+.faq summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--rosa-escuro);
+    list-style: none;
+}
+
+.faq summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq summary::after {
+    content: "＋";
+    float: right;
+    font-weight: bold;
+}
+
+.faq details[open] summary::after {
+    content: "－";
+}
+
+.faq p {
+    margin-top: 12px;
+}
+
+/* ============================
+   Responsividade
+   ============================ */
 @media (max-width: 900px) {
     .cards {
         grid-template-columns: repeat(2, 1fr);
@@ -369,5 +465,13 @@ footer {
 
     .message h2 {
         font-size: 25px;
+    }
+
+    .faq details {
+        padding: 14px 16px;
+    }
+
+    .list {
+        margin-left: 16px;
     }
 }
