@@ -36,6 +36,33 @@ if (menuBtn && menu) {
             menuBtn.textContent = "☰";
         });
     });
+
+    // Fecha o menu ao clicar fora dele
+    document.addEventListener("click", function (evento) {
+        const clicouNoMenu = menu.contains(evento.target);
+        const clicouNoBotao = menuBtn.contains(evento.target);
+
+        if (
+            menu.classList.contains("active") &&
+            !clicouNoMenu &&
+            !clicouNoBotao
+        ) {
+            menu.classList.remove("active");
+            menuBtn.setAttribute("aria-expanded", "false");
+            menuBtn.setAttribute("aria-label", "Abrir menu");
+            menuBtn.textContent = "☰";
+        }
+    });
+
+    // Fecha o menu se a tela for redimensionada para desktop
+    window.addEventListener("resize", function () {
+        if (window.innerWidth > 650 && menu.classList.contains("active")) {
+            menu.classList.remove("active");
+            menuBtn.setAttribute("aria-expanded", "false");
+            menuBtn.setAttribute("aria-label", "Abrir menu");
+            menuBtn.textContent = "☰";
+        }
+    });
 }
 
 /* ============================
@@ -77,8 +104,17 @@ const mensagens = [
 ];
 
 if (messageBtn && mensagem) {
+    // Evita repetir a mesma mensagem duas vezes seguidas
+    let ultimoIndice = -1;
+
     messageBtn.addEventListener("click", function () {
-        const indice = Math.floor(Math.random() * mensagens.length);
+        let indice;
+
+        do {
+            indice = Math.floor(Math.random() * mensagens.length);
+        } while (indice === ultimoIndice && mensagens.length > 1);
+
+        ultimoIndice = indice;
         mensagem.textContent = mensagens[indice];
     });
 }
