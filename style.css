@@ -1,0 +1,373 @@
+
+/* Configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --rosa: #e84383;
+    --rosa-escuro: #c72569;
+    --rosa-claro: #fff0f6;
+    --branco: #ffffff;
+    --texto: #444444;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--texto);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    background-color: var(--branco);
+    box-shadow: 0 2px 12px #00000010;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--rosa);
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.menu a {
+    color: var(--texto);
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: var(--rosa);
+}
+
+.menu-btn {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+/* Seção inicial */
+.hero {
+    min-height: 540px;
+    padding: 70px 8%;
+    background: linear-gradient(120deg, #fff0f6, #ffd6e7);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.tag {
+    color: var(--rosa-escuro);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    color: var(--rosa-escuro);
+    font-size: clamp(42px, 6vw, 70px);
+    line-height: 1.2;
+    margin: 15px 0;
+}
+
+.hero h2 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    margin-bottom: 28px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 28px;
+    background: var(--rosa);
+    color: var(--branco);
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: var(--rosa-escuro);
+    transform: translateY(-2px);
+}
+
+.hero-image {
+    min-width: 260px;
+    text-align: center;
+}
+
+.ribbon {
+    font-size: 160px;
+    filter: drop-shadow(0 10px 15px #d6338440);
+}
+
+/* Seções */
+.section {
+    padding: 80px 8%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title span {
+    color: var(--rosa);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    color: var(--rosa-escuro);
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.about-content h3 {
+    margin-bottom: 12px;
+}
+
+.about-content p {
+    margin-bottom: 15px;
+}
+
+.info-card {
+    padding: 35px;
+    background: var(--rosa-claro);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.card-icon {
+    font-size: 38px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Cartões de sinais de alerta */
+.symptoms {
+    max-width: none;
+    background: #fff8fb;
+}
+
+.cards {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: var(--branco);
+    padding: 28px 22px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px #0000000b;
+    border-bottom: 4px solid var(--rosa);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px #e8438320;
+}
+
+.card h3 {
+    color: var(--rosa-escuro);
+    margin-bottom: 10px;
+}
+
+.notice {
+    max-width: 1000px;
+    margin: 30px auto 0;
+    padding: 18px;
+    background: #ffe2ed;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Prevenção */
+.prevention-list {
+    max-width: 850px;
+    margin: auto;
+}
+
+.prevention-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 22px;
+    margin-bottom: 28px;
+}
+
+.prevention-item > span {
+    min-width: 55px;
+    height: 55px;
+    display: grid;
+    place-items: center;
+    background: var(--rosa-claro);
+    color: var(--rosa-escuro);
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.prevention-item h3 {
+    color: var(--rosa-escuro);
+    margin-bottom: 5px;
+}
+
+/* Mensagem final */
+.message {
+    background: linear-gradient(120deg, #e84383, #b91f61);
+    color: var(--branco);
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.message h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.message p {
+    margin-bottom: 22px;
+}
+
+.btn-light {
+    background: var(--branco);
+    color: var(--rosa-escuro);
+}
+
+.btn-light:hover {
+    background: var(--rosa-claro);
+    color: var(--rosa-escuro);
+}
+
+.mensagem {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Rodapé */
+footer {
+    background: #3b2630;
+    color: var(--branco);
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.footer-small {
+    max-width: 700px;
+    margin: 12px auto;
+    font-size: 13px;
+    color: #f5dce6;
+}
+
+/* Responsividade para celulares */
+@media (max-width: 900px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 12px;
+        padding: 20px 0 5px;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 55px 7%;
+    }
+
+    .ribbon {
+        font-size: 110px;
+    }
+
+    .section {
+        padding: 55px 7%;
+    }
+
+    .section-title h2 {
+        font-size: 26px;
+    }
+
+    .message h2 {
+        font-size: 25px;
+    }
+}
